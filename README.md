@@ -8,3 +8,15 @@ VL.add('variable_name', function(){
     /* do something */
 });
 ```
+
+
+To remove a listener:  
+``` javascript
+VL.remove('variable_name');
+```
+
+
+To start listening:  
+``` javascript
+VL.init();
+```
