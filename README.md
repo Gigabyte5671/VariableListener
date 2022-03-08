@@ -18,5 +18,5 @@ VL.remove('variable_name');
 
 To start listening:  
 ``` javascript
-VL.init();
+VL.start();
 ```

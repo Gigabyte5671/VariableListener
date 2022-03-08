@@ -84,7 +84,7 @@ var VL = {
 
 
 	//Starts listening for changes on all registered variables.
-	init: function () {
+	start: function () {
 		window.requestAnimationFrame(this.loop.bind(this));
 		return true;
 	}
