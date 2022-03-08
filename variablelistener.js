@@ -73,7 +73,7 @@ var VL = {
 
 	//Removes a listener from VL.
 	remove: function (v) {
-		if(this.cache[v]){
+		if(this.cache[v] !== undefined && this.cache[v] !== null){
 			delete this[`task_${v}`]; //Remove the function from VL.
 			delete this.cache[v]; //Delete the varible from the cache.
 			return true;
