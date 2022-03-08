@@ -1,6 +1,6 @@
 # Variable Listener JS
 
-Allows client-side JavaScript to execute functions when the value of any primative variable changes.
+Allows client-side JavaScript to execute arbitrary functions when the value of any global variable changes.
 
 To add a new listener:  
 ``` javascript
