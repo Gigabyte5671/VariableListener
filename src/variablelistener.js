@@ -1,7 +1,5 @@
 (function () {
-	if (!window) {
-		return;
-	}
+	if (!window) return;
 
 	// Stores a copy of all registered variables, allowing the stored value to be compared to the current value.
 	window.variableListenerCache = new Map();
@@ -23,16 +21,13 @@
 			|| !callback
 			|| typeof callback !== 'function'
 			|| !window.hasOwnProperty(variable)
-		) {
-			return false;
-		}
+		) return;
 
 		// Add the variable and its value to the cache.
 		window.variableListenerCache.set(variable, {
 			value: isObject(window[variable]) ? JSON.stringify(window[variable]) : window[variable],
 			callback
 		});
-		return true;
 	};
 
 	// Removes a listener.
