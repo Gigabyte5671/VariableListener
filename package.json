@@ -1,0 +1,19 @@
+{
+	"name": "variable-listener",
+	"version": "1.0.0",
+	"description": "Allows JavaScript to execute arbitrary functions when the value of any global variable changes.",
+	"main": "dist/index.min.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Gigabyte5671/VariableListener.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Gigabyte5671/VariableListener/issues"
+	},
+	"homepage": "https://github.com/Gigabyte5671/VariableListener#readme"
+}
