@@ -1,5 +1,5 @@
 (function () {
-	const global = window ?? globalThis; // Support client and server.
+	const global = typeof window !== 'undefined' ? window : globalThis; // Support client and server.
 	if (!global) return;
 
 	// Stores a copy of all registered variables, allowing the stored value to be compared to the current value.
@@ -43,7 +43,7 @@
 				data.callback?.();
 			}
 		});
-		global.requestAnimationFrame(loop);
+		typeof window !== 'undefined' ? global.requestAnimationFrame(loop) : global.setImmediate(loop);
 	}
 	loop();
 })();
