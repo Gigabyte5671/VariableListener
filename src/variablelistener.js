@@ -30,9 +30,7 @@
 	};
 
 	// Removes a listener.
-	window.removeVariableListener = (variable) => {
-		window.variableListenerCache.delete(variable);
-	};
+	window.removeVariableListener = (variable) => window.variableListenerCache.delete(variable);
 
 	// Starts listening for changes on all registered variables.
 	function loop () {
