@@ -4,14 +4,14 @@
 	// Stores a copy of all registered variables, allowing the stored value to be compared to the current value.
 	window.variableListenerCache = new Map();
 
-	// Checks if a variable is an object literal. If so, it needs to be treated differently to avoid inheritance.
-	function isObject (value) {
-		return value && typeof value === 'object' && !Array.isArray(value);
+	// Normalize object/array values to primative types to remove inheritance.
+	function normalizeValue (value) {
+		return value && typeof value === 'object' ? JSON.stringify(value) : value;
 	}
 
 	// Compares a variable's current value to its cached value.
 	function variableHasChanged (variable, value) {
-		return isObject(window[value]) ? window.variableListenerCache.get(variable)?.value !== JSON.stringify(window[value]) : this.cache[value] !== window[value];
+		return normalizeValue(value) !== normalizeValue(window[variable]);
 	}
 
 	// Add a new variable listener. Accepts a variable name and a function to be called whenever the variable changes.
@@ -22,10 +22,9 @@
 			|| typeof callback !== 'function'
 			|| !window.hasOwnProperty(variable)
 		) return;
-
 		// Add the variable and its value to the cache.
 		window.variableListenerCache.set(variable, {
-			value: isObject(window[variable]) ? JSON.stringify(window[variable]) : window[variable],
+			value: normalizeValue(window[variable]),
 			callback
 		});
 	};
@@ -40,7 +39,7 @@
 		window.variableListenerCache.forEach((variable, data) => {
 			if (variableHasChanged(variable)) {
 				// Update the cached value.
-				data.value = isObject(window[variable]) ? JSON.stringify(window[variable]) : window[variable];
+				data.value = normalizeValue(window[variable]);
 				// Execute the function.
 				data.callback?.();
 			}
