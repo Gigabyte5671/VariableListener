@@ -40,7 +40,7 @@
 				// Update the cached value.
 				data.value = normalizeValue(global[variable]);
 				// Execute the function.
-				data.callback?.();
+				data.callback?.(global[variable]);
 			}
 		});
 		typeof window !== 'undefined' ? global.requestAnimationFrame(loop) : global.setImmediate(loop);
