@@ -35,8 +35,8 @@
 
 	// Starts listening for changes on all registered variables.
 	function loop () {
-		global.variableListenerCache.forEach((variable, data) => {
-			if (variableHasChanged(variable)) {
+		global.variableListenerCache.forEach((data, variable) => {
+			if (variableHasChanged(variable, data.value)) {
 				// Update the cached value.
 				data.value = normalizeValue(global[variable]);
 				// Execute the function.
