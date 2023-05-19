@@ -1,8 +1,8 @@
 {
 	"name": "variable-listener",
 	"version": "1.0.0",
-	"description": "Allows JavaScript to execute arbitrary functions when the value of any global variable changes.",
-	"main": "dist/index.min.js",
+	"description": "Execute arbitrary functions when the value of any global variable changes.",
+	"main": "dist/variable-listener.min.js",
 	"scripts": {
 		"test": "node tests/index.test.js"
 	},
