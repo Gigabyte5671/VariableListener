@@ -4,6 +4,7 @@
 	"description": "Execute arbitrary functions when the value of any global variable changes.",
 	"main": "dist/variable-listener.min.js",
 	"scripts": {
+		"build": "node build.js",
 		"test": "node tests/index.test.js"
 	},
 	"repository": {
