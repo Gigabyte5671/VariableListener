@@ -11,8 +11,9 @@
 		"type": "git",
 		"url": "git+https://github.com/Gigabyte5671/VariableListener.git"
 	},
-	"author": "",
+	"author": "Giga <contact@zakweb.dev>",
 	"license": "MIT",
+	"keywords": ["javascript", "variable", "listener", "event", "callback"],
 	"bugs": {
 		"url": "https://github.com/Gigabyte5671/VariableListener/issues"
 	},
