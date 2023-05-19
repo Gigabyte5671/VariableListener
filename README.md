@@ -2,6 +2,8 @@
 
 Allows JavaScript to execute arbitrary functions when the value of any global variable changes.
 
+![npm bundle size](https://img.shields.io/bundlephobia/min/variable-listener)
+
 
 ## Installation
 
