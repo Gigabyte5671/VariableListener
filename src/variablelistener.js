@@ -4,6 +4,7 @@
 
 	// Stores a copy of all registered variables, allowing the stored value to be compared to the current value.
 	global.variableListenerCache = new Map();
+	global.variableListenerRunning = false;
 
 	// Normalize object/array values to primative types to remove inheritance.
 	function normalizeValue (value) {
@@ -28,6 +29,10 @@
 			value: normalizeValue(global[variable]),
 			callback
 		});
+		// If the loop isn't running, start it.
+		if (!global.variableListenerRunning) {
+			loop();
+		}
 	};
 
 	// Removes a listener.
@@ -43,7 +48,10 @@
 				data.callback?.(global[variable]);
 			}
 		});
-		typeof window !== 'undefined' ? global.requestAnimationFrame(loop) : global.setImmediate(loop);
+		// Only loop if there are variables to listen to.
+		global.variableListenerRunning = global.variableListenerCache.size > 0;
+		if (global.variableListenerRunning) {
+			typeof window !== 'undefined' ? global.requestAnimationFrame(loop) : global.setImmediate(loop);
+		}
 	}
-	loop();
 })();
