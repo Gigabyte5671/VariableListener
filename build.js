@@ -27,8 +27,9 @@ const request = https.request(
 		});
 	}
 );
-
 request.on('error', (error) => { throw error; });
 request.setHeader('Content-Type', 'application/x-www-form-urlencoded');
 request.setHeader('Content-Length', query.length);
 request.end(query, 'utf8');
+
+fs.copyFileSync('./src/variable-listener.d.ts', './dist/variable-listener.min.d.ts');
