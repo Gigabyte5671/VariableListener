@@ -1,4 +1,4 @@
-require('../src/variablelistener');
+require('../src/variable-listener');
 
 async function unit (variableName, initialValue, updatedValue) {
 	return new Promise((resolve, reject) => {
