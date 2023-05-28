@@ -1,6 +1,6 @@
 {
 	"name": "variable-listener",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Execute arbitrary functions when the value of any global variable changes.",
 	"main": "dist/variable-listener.min.js",
 	"types": "dist/variable-listener.min.d.ts",
@@ -14,7 +14,13 @@
 	},
 	"author": "Giga <contact@zakweb.dev>",
 	"license": "MIT",
-	"keywords": ["javascript", "variable", "listener", "event", "callback"],
+	"keywords": [
+		"javascript",
+		"variable",
+		"listener",
+		"event",
+		"callback"
+	],
 	"bugs": {
 		"url": "https://github.com/Gigabyte5671/VariableListener/issues"
 	},
